@@ -3,7 +3,7 @@ name: Deploy Vite App to GitHub Pages
 on:
   push:
     branches:
-      - main  # sempre que você fizer push na branch main
+      - main   # sempre que você fizer push na branch main
 
 jobs:
   build-and-deploy:
@@ -13,11 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - - name: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-        node-version: 20
-
+          node-version: 20   # versão correta para evitar erro do styleText
 
       - name: Install dependencies
         run: npm install
